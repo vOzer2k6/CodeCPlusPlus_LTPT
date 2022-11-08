@@ -19,9 +19,8 @@ void xuly(int i){
         else xuly(i+1);
     }
 }
-
 int main(){
     nhap();
     xuly(1);
-	return 0;
+    return 0;
 }
