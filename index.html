@@ -1,11 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
   <head>
-    <title>For 20-11</title>
     <meta name="Generator" content="EditPlus" />
     <meta name="Author" content="" />
     <meta name="Keywords" content="" />
     <meta name="Description" content="" />
+    <title>Phạm Thị Huyền</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/binTNT/profile1/main/icon.png"
+    />
 
     <style>
       html,
@@ -13,87 +18,75 @@
         height: 100%;
         padding: 0;
         margin: 0;
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background: rgb(0, 0, 0);
       }
-      h1 {
-        color: #ff5ca4;
-      }
-      .box {
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-      }
-
       canvas {
         position: absolute;
         width: 100%;
         height: 100%;
+        animation: myKey 1s infinite ease-in-out;
       }
-      #pinkboard {
-        position: relative;
-        margin: auto;
-        height: 500px;
-        width: 500px;
-        animation: animate 2s infinite;
+      audio {
+        background-color: black;
       }
-      h1 {
-        animation: animate 2s infinite;
+      @keyframes myKey {
+        0%,
+        100% {
+          transform: scale(0.8);
+          -webkit-transform: scale(0.8);
+        }
+        50% {
+          transform: scale(1);
+          -webkit-transform: scale(1);
+          color: red;
+        }
       }
-      #pinkboard:before,
-      #pinkboard:after {
-        content: "";
-        position: absolute;
-        background: #ff5ca4;
-        width: 100px;
-        height: 160px;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-      }
-
-      #pinkboard:before {
-        left: 100px;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-          0 10px 10px rgba(0, 0, 0, 0.22);
-      }
-
-      #pinkboard:after {
-        left: 0;
-        transform: rotate(45deg);
-        transform-origin: 100% 100%;
-      }
-
-      @keyframes animate {
+      @keyframes heart {
         0% {
           transform: scale(1);
         }
-        30% {
-          transform: scale(0.8);
-        }
-        60% {
+        40%{
           transform: scale(1.2);
         }
-        100% {
+        100%{
           transform: scale(1);
         }
       }
+      img{
+            animation: heart 1.0s ease infinite;
+        }
+    #content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: aqua;
+    font-size: 20px;
+    z-index: 1;
+    }
     </style>
   </head>
 
   <body>
-    <h1>Phạm Thị Huyền</h1>
-    <div class="box">
-      <canvas id="pinkboard"></canvas>
-    </div>
+    
+        <div id="content">
+             <img src="Picture1.png" height="140px" width="140px" alt="" >
+        </div>
+     
 
+    <canvas
+      id="pinkboard"
+      onclick="playaudio()"
+      onkeydown="playaudio()"
+    ></canvas>
+    <audio id="myMusic">
+      <source src="music.mp3" />
+    </audio>
+    
     <script>
       /*
        * Settings
@@ -101,12 +94,13 @@
       var settings = {
         particles: {
           length: 1000, // maximum amount of particles
-          duration: 3, // particle duration in sec
-          velocity: 100, // particle velocity in pixels/sec
+          duration: 3.499, // particle duration in sec
+          velocity: 150, // particle velocity in pixels/sec
           effect: -0.75, // play with this for a nice effect
-          size: 13, // particle size in pixels
+          size: 25, // particle size in pixels
         },
       };
+
       /*
        * RequestAnimationFrame polyfill by Erik Möller
        */
@@ -136,6 +130,7 @@
           };
         }
       })();
+
       /*
        * Point class
        */
@@ -163,6 +158,7 @@
         };
         return Point;
       })();
+
       /*
        * Particle class
        */
@@ -205,6 +201,7 @@
         };
         return Particle;
       })();
+
       /*
        * ParticlePool class
        */
@@ -266,6 +263,7 @@
         };
         return ParticlePool;
       })();
+
       /*
        * Putting it all together
        */
@@ -317,7 +315,7 @@
           }
           context.closePath();
           // create the fill
-          context.fillStyle = "#FF5CA4";
+          context.fillStyle = "#0000FF";
           context.fill();
           // create the image
           var image = new Image();
@@ -369,6 +367,11 @@
           render();
         }, 10);
       })(document.getElementById("pinkboard"));
+
+      var x = document.getElementById("myMusic");
+      function playaudio() {
+        x.play();
+      }
     </script>
   </body>
 </html>
