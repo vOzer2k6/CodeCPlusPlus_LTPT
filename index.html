@@ -1,118 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Music space </title>
-        <meta charset="utf-8">
-        <link
+<!doctype html>
+<link
       rel="icon"
       type="image/x-icon"
-      href="https://cdn-icons-png.flaticon.com/512/2829/2829075.png"
+      href="https://cdn-icons-png.flaticon.com/512/3633/3633450.png"
     >
-    <link type="text/css" rel="stylesheet" href="css/structure.css">
-    <link type="text/css" rel="stylesheet" href="css/components.css">
-    <link type="text/css" rel="stylesheet" href="css/icons.css">
-
-    <link rel="shortcut icon" href="img/icon.ico">
-</head>
-<style>
-    body {
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        background-image: url('https://images.pexels.com/photos/2763927/pexels-photo-2763927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-        background-size: 100%;
-    }
-</style>
+<link rel="stylesheet" href="weather.css">
+<title>My CV</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="I design and code things on the web." />
+<meta property="og:site_name" content="juliangarnier.com" />
+<meta property="og:title" content="Julian Garnier" />
+<meta property="og:description" content="I design and code things on the web." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://juliangarnier.com" />
+<meta property="og:image" content="http://juliangarnier.com/img/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="768" />
+<meta property="og:image:height" content="416" />
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1373/1373056.png" />
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/886/886477.png" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 <body>
-
-    <div class="container">
-
-        <header class="header">
-
-            <div class="logo">
-                <span class="icon icon-headphones"></span>
-               Just for youuuuuu 
-            </div>
-<!--
-            <div class="user-preferences">
-                <button class="btn btn-header btn-user-preferences"> <span class="icon icon-cog"></span> </button>
-                <div class="wrap">
-                    <ul class="theme">
-                        <li class="theme-item" id="theme-light">Light</li>
-                        <li class="theme-item" id="theme-dark" >Dark </li>
-                    </ul>
-                    <ul class="color">
-                        <li class="color-item">
-                            <button id="btn-green" class="btn btn-color green"></button>
-                            <button id="btn-pink"  class="btn btn-color pink"></button>
-                            <button id="btn-red"   class="btn btn-color red"></button>
-                            <button id="btn-blue"  class="btn btn-color blue"></button>
-                        </li>
-                    </ul>
-                </div>  
-            </div>
--->
-            <div class="upload-wrap">
-                <form name="form_upload">
-                    <input type="file" id="file-element" accept="audio/mp3" multiple style="display:none;" />
-                    <button type="button" id="btn-upload" class="btn btn-header" title="Adicionar Músicas"><span class="icon icon-music"></span>Upload Here</button>
-                </form>
-            </div>
-
-        </header>
-
-        <section class="play-list-wrap">
-            <ul class="play-list" id="play-list"></ul>
-        </section>
-
-        <section class="player-wrap">
-
-            <audio id="player" preload="auto">Seu browser não suporta reprodução de áudio.</audio>
-
-            <div class="controls-wrap">
-                <button type="button" class="btn player-btn icon icon-repeat" id="repeat"></button>
-                <button type="button" class="btn player-btn icon icon-chevron-left" id="prev"></button>
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <button type="button" class="btn player-btn icon icon-play large"  id="btn-play"></button>
-                        </div>
-                        <div class="back">
-                            <button type="button" class="btn player-btn icon icon-pause large" id="btn-pause"></button>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" class="btn player-btn icon icon-chevron-right" id="next"></button>
-                <button type="button" class="btn player-btn icon icon-random"        id="random"></button>
-            </div>  
-            
-            <div class="music-info">
-                <div class="loading-wrap">
-                    <span id="loading-music" class="loading">Carregando...</span>
-                </div>
-                <label id="music-name"> -- </label>
-            </div>
-
-            <div class="timeline-wrap">
-                <label id="time-count">00:00</label>
-                <input type="range" class="range opaque" min="0" max="100" id="timeline" value="0" step="any">
-                <label id="time">00:00</label>
-
-                <div class="volume-wrap">
-                    <button type="button" class="btn-volume btn player-btn small icon icon-volume-down"></button>
-                    <span class="volume-box">
-                        <input type="range" class="range" min="0" max="10" id="volume" value="10">
-                    </span>
-                </div>
-            </div>
-
-        </section>
-
+  <div class="messages"></div>
+  <script src="anime.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-37236197-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <article class="widget">
+    <div class="weatherIcon"><i class="wi wi-day-cloudy"></i></div>
+    <div class="weatherInfo">
+      <div class="temperature"><span>25&deg;</span></div>
+      <div class="description">    
+        <div class="weatherCondition">CLOUDY</div>    
+        <div class="place">New York, New York</div>
+      </div>
     </div>
-
-    <script type="text/javascript" src="js/player.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <div class="date">1st Jan</div>
+  </article>
+  </p>
 </body>
-</html>
+
