@@ -18,7 +18,7 @@ void Khoitaocodecodau(){
     SetCurrentConsoleFontEx(hdlConsole, FALSE, &consoleFont);
 }
 int main(){
-  khoitaocodecodau();
+  Khoitaocodecodau();
   wcout << L" Chào mừng các bạn đến với trang github của mình";
   return 0;
 }
